@@ -1,0 +1,37 @@
+Programmers are not scared of AI.
+They are scared of bad AI.
+
+Because code is not just typing.
+It is responsibility.
+One wrong line can leak data.
+Crash a system.
+Or drain money.
+
+AI can write code fast.
+But speed is not the hard part.
+The hard part is knowing what to build.
+And what can break.
+
+Here’s the real fear.
+A beginner will copy AI code.
+Ship it.
+And never test it.
+Then the bug looks “mysterious.”
+But it was predictable.
+
+So how do smart developers use AI?
+They use it like a junior teammate.
+Great for drafts.
+Great for options.
+Great for explanations.
+
+But the final decision stays human.
+Review.
+Tests.
+Security checks.
+
+AI won’t replace programmers.
+But programmers who can direct AI will replace programmers who can’t.
+
+If AI wrote 80% of your code,
+what would you do with the extra time?

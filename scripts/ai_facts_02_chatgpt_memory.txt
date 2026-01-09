@@ -1,0 +1,36 @@
+Your AI might remember you.
+Even when you forget it.
+
+Some assistants can store “memory” about your preferences.
+Like your job.
+Your writing style.
+Or what you are building.
+That means future answers can be more personal.
+And more useful.
+
+But here’s the tradeoff.
+Memory is power.
+Because small details can reveal a lot.
+Your city.
+Your schedule.
+Your plans.
+Even your weak spots.
+
+So what should you do?
+Never put secrets in chat.
+No passwords.
+No OTPs.
+No private keys.
+No confidential client data.
+
+Use a simple rule.
+If you would not paste it in a public document,
+do not paste it into an AI.
+
+And if you do want memory,
+keep it boring.
+Like: “I prefer short answers.”
+That’s safe.
+
+If an AI could remember one thing about you forever,
+what would you want it to be?

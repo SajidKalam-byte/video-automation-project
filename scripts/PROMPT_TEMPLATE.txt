@@ -1,0 +1,14 @@
+Generate a YouTube Shorts script (45–60 seconds).
+
+Topic: {TOPIC}
+
+Rules:
+- First line must shock or surprise
+- Simple English (global audience)
+- Short sentences
+- No emojis
+- No hashtags
+- End with a curiosity question
+- Tone: confident, curious, engaging
+
+Do NOT mention YouTube or Shorts.

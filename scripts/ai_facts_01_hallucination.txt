@@ -1,0 +1,27 @@
+AI can confidently tell you a lie.
+
+Here’s the scary part.
+It does not “know” it is lying.
+Some AI systems generate text by predicting the next word.
+Not by checking truth.
+So if your question sounds confident…
+the answer can sound confident too.
+
+This is called hallucination.
+It can invent quotes.
+Fake research papers.
+Even fake website links.
+And it can do it in perfect grammar.
+
+So how do you use AI safely?
+Treat it like a super fast draft machine.
+Then verify with sources.
+Ask for citations.
+And cross-check the key numbers.
+
+One more twist.
+Hallucinations get worse when the model is forced to answer.
+So “I don’t know” is actually a sign of a safer system.
+
+If an AI sounds 100% sure…
+how do you know it is not just guessing?

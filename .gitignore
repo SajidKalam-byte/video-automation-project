@@ -1,0 +1,21 @@
+# Secrets
+client_secret.json
+*.secret.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Outputs
+output/
+outputs/
+*.mp4
+*.wav
+*.mp3
+
+# OS/Editor
+.DS_Store
+.vscode/

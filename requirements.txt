@@ -1,0 +1,7 @@
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-cloud-texttospeech
+
+# n8n is a Node.js tool (install via npm), not pip:
+# npm i -g n8n

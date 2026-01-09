@@ -1,0 +1,31 @@
+AI does not see pictures like you.
+It sees patterns in numbers.
+
+An image becomes a grid of pixels.
+Pixels become values.
+Then the model learns shapes.
+Edges.
+Textures.
+And relationships.
+
+That is why AI can recognize a cat.
+Even if the cat is upside down.
+Or in bad lighting.
+
+But this also explains failures.
+Small changes can confuse it.
+A sticker on a stop sign.
+A weird shadow.
+A slightly different angle.
+
+So when people say “AI sees,”
+it is a shortcut.
+It is not vision.
+It is math.
+
+This matters for safety.
+Because the world is messy.
+And math models love clean patterns.
+
+If AI can be fooled by a tiny sticker,
+how should we trust it in real life?
