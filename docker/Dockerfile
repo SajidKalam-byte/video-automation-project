@@ -1,12 +1,25 @@
-# Minimal base image for running the pipeline
-FROM python:3.11-slim
+FROM n8nio/n8n:latest
 
+USER root
+
+# Install system dependencies
+RUN apk add --no-cache \
+    ffmpeg \
+    python3 \
+    py3-pip \
+    bash
+
+# Set working directory
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Copy dependency list
+COPY requirements.txt .
 
-COPY . /app
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Default entrypoint (override per use)
-CMD ["python", "-m", "scripts.generate_script"]
+# Copy entire repo into container
+COPY . .
+
+# n8n runs as node user
+USER node
