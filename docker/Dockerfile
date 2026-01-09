@@ -1,25 +1,19 @@
-FROM n8nio/n8n:latest
-
-USER root
+FROM python:3.10-slim
 
 # Install system dependencies
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     ffmpeg \
-    python3 \
-    py3-pip \
-    bash
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
 
-# Copy dependency list
-COPY requirements.txt .
+COPY scripts/ scripts/
+COPY assets/ assets/
 
-# Install Python dependencies
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir \
+    google-api-python-client \
+    google-auth-httplib2 \
+    google-auth-oauthlib
 
-# Copy entire repo into container
-COPY . .
-
-# n8n runs as node user
-USER node
+CMD ["sleep", "infinity"]
