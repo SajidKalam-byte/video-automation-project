@@ -8,6 +8,11 @@ services:
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - TZ=Asia/Kolkata
+
+      # 🔥 THIS ENABLES EXECUTE COMMAND
+      - N8N_EXECUTIONS_PROCESS=main
+      - N8N_ALLOW_BUILTIN_EXECUTIONS=true
+      - N8N_ALLOW_EXTERNAL_EXECUTIONS=true
     volumes:
       - ./n8n_data:/home/node/.n8n
       - ../:/data
