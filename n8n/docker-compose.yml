@@ -20,6 +20,7 @@ services:
     volumes:
       - ./n8n_data:/home/node/.n8n
       - ../:/data
+    restart: always
     depends_on:
       - worker
 
