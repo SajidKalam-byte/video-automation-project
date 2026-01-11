@@ -1,20 +1,36 @@
-"""Convert plain script text to basic SSML for TTS."""
+from pathlib import Path
 
-from __future__ import annotations
+SCRIPTS_DIR = Path(__file__).parent
+SCRIPT_TXT = SCRIPTS_DIR / "generated_script.txt"
+SCRIPT_SSML = SCRIPTS_DIR / "script.ssml"
 
-import re
+
+def text_to_ssml(text: str) -> str:
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+
+    ssml = ["<speak>"]
+
+    for line in lines:
+        ssml.append(
+            f'<prosody rate="104%" pitch="+2st" volume="+5dB">'
+            f"{line}"
+            f"</prosody><break time='300ms'/>"
+        )
+
+    ssml.append("</speak>")
+    return "\n".join(ssml)
 
 
-def to_ssml(text: str) -> str:
-    # Minimal SSML: escape &, <, > and add breaks between sentences.
-    escaped = (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .strip()
-    )
+def main():
+    if not SCRIPT_TXT.exists():
+        raise FileNotFoundError("generated_script.txt not found")
 
-    # Insert short breaks after sentence endings.
-    escaped = re.sub(r"([.!?])\s+", r"\1<break time=\"250ms\"/> ", escaped)
+    text = SCRIPT_TXT.read_text(encoding="utf-8")
+    ssml = text_to_ssml(text)
 
-    return f"<speak>{escaped}</speak>"
+    SCRIPT_SSML.write_text(ssml, encoding="utf-8")
+    print("✅ script.ssml created")
+
+
+if __name__ == "__main__":
+    main()

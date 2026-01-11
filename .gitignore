@@ -19,3 +19,4 @@ outputs/
 # OS/Editor
 .DS_Store
 .vscode/
+tts-key.json
