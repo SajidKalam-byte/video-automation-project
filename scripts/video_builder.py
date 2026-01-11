@@ -1,32 +1,24 @@
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent.parent
 
-BACKGROUND = PROJECT_ROOT / "assets" / "background.jpg"
-VOICE = PROJECT_ROOT / "voice.wav"
-MUSIC = PROJECT_ROOT / "assets" / "music.mp3"
-OUTPUT = PROJECT_ROOT / "final.mp4"
-
+VOICE = ROOT / "voice.wav"
+BG = ROOT / "assets" / "background.jpg"
+OUT = ROOT / "final.mp4"
 
 def build_video():
-    if not BACKGROUND.exists():
-        raise FileNotFoundError(f"Missing background: {BACKGROUND}")
     if not VOICE.exists():
-        raise FileNotFoundError(f"Missing voice.wav")
-    if not MUSIC.exists():
-        raise FileNotFoundError(f"Missing music.mp3")
+        raise FileNotFoundError("Missing voice.wav")
+
+    if not BG.exists():
+        raise FileNotFoundError("Missing assets/background.jpg")
 
     cmd = [
         "ffmpeg", "-y",
-        "-loop", "1", "-i", str(BACKGROUND),
+        "-loop", "1",
+        "-i", str(BG),
         "-i", str(VOICE),
-        "-i", str(MUSIC),
-        "-filter_complex",
-        "[2:a]volume=0.12,asetpts=N/SR/TB[music];"
-        "[1:a][music]amix=inputs=2:dropout_transition=2,aresample=async=1[a]",
-        "-map", "0:v",
-        "-map", "[a]",
         "-c:v", "libx264",
         "-tune", "stillimage",
         "-c:a", "aac",
@@ -34,12 +26,11 @@ def build_video():
         "-pix_fmt", "yuv420p",
         "-shortest",
         "-s", "1080x1920",
-        str(OUTPUT)
+        str(OUT)
     ]
 
     subprocess.run(cmd, check=True)
     print("✅ final.mp4 created")
-
 
 if __name__ == "__main__":
     build_video()

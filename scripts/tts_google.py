@@ -1,9 +1,9 @@
 from pathlib import Path
 from google.cloud import texttospeech
 
-SCRIPTS_DIR = Path(__file__).parent
-SSML_FILE = SCRIPTS_DIR / "script.ssml"
-OUT_WAV = SCRIPTS_DIR / "voice.wav"
+ROOT = Path(__file__).resolve().parent.parent
+SSML_FILE = ROOT / "scripts" / "script.ssml"
+OUT_WAV = ROOT / "voice.wav"
 
 
 def main():
