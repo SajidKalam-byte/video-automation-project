@@ -3,7 +3,7 @@ import subprocess
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-BACKGROUND = PROJECT_ROOT / "assets" / "background.jpeg"
+BACKGROUND = PROJECT_ROOT / "assets" / "background.jpg"
 VOICE = PROJECT_ROOT / "voice.wav"
 MUSIC = PROJECT_ROOT / "assets" / "music.mp3"
 OUTPUT = PROJECT_ROOT / "final.mp4"
